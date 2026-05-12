@@ -4,6 +4,7 @@ import android.content.Context
 import com.ahyahya1616.smartbudget.data.AppDatabase
 import com.ahyahya1616.smartbudget.data.dao.CategoryDao
 import com.ahyahya1616.smartbudget.data.dao.ExpenseDao
+import com.ahyahya1616.smartbudget.data.dao.MonthlyBudgetDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -29,5 +30,10 @@ object DatabaseModule {
     @Provides
     fun provideExpenseDao(database: AppDatabase): ExpenseDao {
         return database.expenseDao()
+    }
+
+    @Provides
+    fun provideMonthlyBudgetDao(database: AppDatabase): MonthlyBudgetDao {
+        return database.monthlyBudgetDao()
     }
 }
